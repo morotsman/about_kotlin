@@ -66,7 +66,7 @@ object FollowThePrinciple {
         //and so on
     }
 
-    interface EatableFruit: Fruit {
+    interface EatableFruit : Fruit {
         fun calories(): Float
     }
 
@@ -103,8 +103,8 @@ object FollowThePrinciple {
         val consumedFruits = listOf(
             Apple("Red", 50),
             Apple("Red", 100),
-            Orange("Orange", 100),
-            Ackee("Red", 100)
+            Orange("Orange", 100)//,
+            // Ackee("Red", 100)
         )
 
         println(caloriesAndColorCalculator(Person("Niklas"), consumedFruits))
