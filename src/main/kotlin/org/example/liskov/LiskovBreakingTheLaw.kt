@@ -26,17 +26,17 @@ object BreakingTheLaw1 {
     data class Person(
         val name: String,
         val caloriesConsumed: Float = 0.0f,
-        val wightOfConsumedFuits: Int = 0
+        val weightOfConsumedFuits: Int = 0
     ) {
         fun eat(fruit: Fruit): Person =
             this.copy(
                 caloriesConsumed = (caloriesConsumed + fruit.calories()),
-                wightOfConsumedFuits = wightOfConsumedFuits + fruit.weightInGrams
+                weightOfConsumedFuits = weightOfConsumedFuits + fruit.weightInGrams
             )
 
     }
 
-    private fun caloriesAndColorCalculator(person: Person, fruits: List<Fruit>): Person =
+    private fun caloriesAndWeightCalculator(person: Person, fruits: List<Fruit>): Person =
         fruits.fold(person) { acc, fruit -> acc.eat(fruit) }
 
 
@@ -49,7 +49,7 @@ object BreakingTheLaw1 {
             Ackee("Orange", 100)
         )
 
-        println(caloriesAndColorCalculator(Person("Niklas"), consumedFruits))
+        println(caloriesAndWeightCalculator(Person("Niklas"), consumedFruits))
 
         val inventory = mapOf<Fruit, Int>(
 
@@ -84,17 +84,17 @@ object FollowThePrinciple {
     data class Person(
         val name: String,
         val caloriesConsumed: Float = 0.0f,
-        val wightOfConsumedFuits: Int = 0
+        val weightOfConsumedFuits: Int = 0
     ) {
         fun eat(fruit: EatableFruit): Person =
             this.copy(
                 caloriesConsumed = (caloriesConsumed + fruit.calories()),
-                wightOfConsumedFuits = wightOfConsumedFuits + fruit.weightInGrams
+                weightOfConsumedFuits = weightOfConsumedFuits + fruit.weightInGrams
             )
 
     }
 
-    private fun caloriesAndColorCalculator(person: Person, fruits: List<EatableFruit>): Person =
+    private fun caloriesAndWeightCalculator(person: Person, fruits: List<EatableFruit>): Person =
         fruits.fold(person) { acc, fruit -> acc.eat(fruit) }
 
 
@@ -107,7 +107,7 @@ object FollowThePrinciple {
             // Ackee("Red", 100)
         )
 
-        println(caloriesAndColorCalculator(Person("Niklas"), consumedFruits))
+        println(caloriesAndWeightCalculator(Person("Niklas"), consumedFruits))
     }
 }
 
